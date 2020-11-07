@@ -1,0 +1,13 @@
+http://localhost:8080/publish-message
+
+{  
+    "message": {  
+        "emailId":       "azaveri7@gmail.com",   
+        "flight": {
+        	"flightId" : 1,
+        	"airlinesName" : "INDIGO",
+        	"destinationName" : "RAJKOT",
+        	"boardingName" : "PUNE"
+        } 
+    }  
+}

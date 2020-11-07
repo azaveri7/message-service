@@ -13,7 +13,7 @@ public class MessageRepository {
 	private SNSUtil util;
 	
 	public void publishMessageOnSNS(Message message){
-		util.publishSNSMessage(message);
+		util.publishSNSMessage(message.toString());
 	}
 	
 }
