@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: message-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: message-service
+  template:
+    metadata:
+      labels:
+        app: message-service
+    spec:
+      containers:
+      - name: message-service
+        image: azaveri7/microservices:message-service
+        ports:
+        - containerPort: 8082
+        env:
+          - name: MY_POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: MY_POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: MY_POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: message-service-svc
+  labels:
+    app: message-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8082
+  selector:
+    app: message-service

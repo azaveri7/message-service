@@ -1,4 +1,4 @@
-package com.paathshala.messageservice.util;
+/*package com.paathshala.messageservice.util;
 
 import javax.annotation.PostConstruct;
 
@@ -55,3 +55,4 @@ public class SNSUtil {
 	}
 
 }
+*/

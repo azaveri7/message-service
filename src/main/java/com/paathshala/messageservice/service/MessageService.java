@@ -22,7 +22,9 @@ public class MessageService {
 		msgPublish.setMessage(message);
 		messageRepository.publishMessageOnSNS(message);
 		msgPublish.setHostname(
-				env.getProperty("local.server.host") + " is running on " + env.getProperty("local.server.port"));
+				env.getProperty("MY_POD_NAME") + " is running on IP " + 
+		        env.getProperty("MY_POD_IP") + " in the namespace " + 
+				env.getProperty("MY_POD_NAMESPACE"));
 		return msgPublish;
 	}
 
