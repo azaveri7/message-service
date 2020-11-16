@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: message-service
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: message-service
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: message-service
-        image: azaveri7/microservices:message-service-1
+        image: azaveri7/microservices:message-service
         ports:
         - containerPort: 8082
         env:
