@@ -26,7 +26,7 @@ public class Message {
 		return "Flight Id: " + flight.getFlightId() + " \n" +
 				"Flight name: " + flight.getAirlinesName() + " \n" +
 				"Destination name: " + flight.getDestinationName() + " \n" +
-				"Source name: " + flight.getBoardingName() + " \n" + 
+				"Source name: " + flight.getBoardingName() + " \n" +
 				"Email id: " + getEmailId() + " \n";
 	}
 }

@@ -52,7 +52,8 @@ public class SNSUtil {
 		PublishResult result = this.amazonSNS.publish(this.snsTopicARN, message);
 
 		logger.info("SNS Message ID: " + result.getMessageId());
-	}
+	}]
+
 
 }
 */

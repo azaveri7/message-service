@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: message-service
-        image: azaveri7/microservices:message-service
+        image: azaveri7/microservices:message-service-1
         ports:
         - containerPort: 8082
         env:
