@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: paathshala
+  name: deployment-message
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: app-message-service
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: app-message-service
+    spec:
+      containers:
+        - image: 615360450654.dkr.ecr.us-east-2.amazonaws.com/message-service:latest
+          imagePullPolicy: Always
+          name: app-message-service
+          ports:
+            - containerPort: 8082
+              name: server
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: paathshala
+  name: message-service-svc
+spec:
+  ports:
+    - port: 8082
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: app-message-service
